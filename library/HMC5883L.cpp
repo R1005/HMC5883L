@@ -15,13 +15,13 @@ int HMC5883L::getAngle(){
   Wire.requestFrom(0x1E,6);
   
   if(6<=Wire.available()){
-    x = Wire.read()<<8; 
+    x = Wire.read() << 8; 
     x |= Wire.read(); 
-    z = Wire.read()<<8; 
+    z = Wire.read() << 8; 
     z |= Wire.read(); 
-    y = Wire.read()<<8; 
+    y = Wire.read() << 8; 
     y |= Wire.read(); 
   }
-  re = atan2((x+ 20),(y+ 20)*(-1))* RAD_TO_DEG+ 180;
+  re = atan2((x + 20),(y + 20)*(-1))* RAD_TO_DEG+ 180;
   return re;
 }
