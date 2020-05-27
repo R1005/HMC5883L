@@ -3,6 +3,7 @@
 #include "Wire.h"
 
 HMC5883L::HMC5883L(){
+  Wire.begin();
 }
 
 int HMC5883L::getAngle(){
