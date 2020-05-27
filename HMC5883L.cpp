@@ -7,7 +7,7 @@ HMC5883L::HMC5883L(){
 
 int HMC5883L::getAngle(){
   int x,y,z;
-  int re;
+  int val;
   Wire.beginTransmission(0x1E);
   Wire.write(0x03);
   Wire.endTransmission();
@@ -22,5 +22,5 @@ int HMC5883L::getAngle(){
     y |= Wire.read(); 
   }
   re = atan2((x+ 20),(y+ 20)*(-1))* RAD_TO_DEG+ 180;
-  return re;
+  return val;
 }
